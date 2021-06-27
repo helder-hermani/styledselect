@@ -1,0 +1,131 @@
+*{
+    box-sizing: border-box;
+}
+
+h1{
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    font-size: 2rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+p{
+    font-family: 'Roboto', sans-serif;
+}
+
+span{
+    font-family: 'Roboto', sans-serif;
+    color: blue;
+}
+
+.divContent{
+    margin: 1%;
+    padding: 1% 1%;
+    background-color: rgba(0, 0, 0, .1);
+    border-radius: 10px;
+    height: 95vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.divContent header{
+    border: solid 2px black;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2%;
+    box-shadow: 2px 2px 20px 10px rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, .5);
+}
+
+.sectionSamples{
+    display: flex;
+    flex-direction: row;
+    gap: 5%;
+    justify-content: space-evenly;
+    margin: 2% 0;
+    box-sizing: border-box;
+}
+
+.sectionSamples > div{
+    width: 50%;
+}
+
+.divSamples{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.divSample{
+    border: solid 2px rgba(0, 0, 0, .7);
+    border-radius: 5px;
+    margin-bottom: 5%;
+    padding: 2%;
+    background-color: rgba(255,255,255,.5);
+}
+
+.descriptionContent{
+    border: solid 1px black;
+    padding: 2%;
+    font-family: 'Courier New', Courier, monospace;
+    overflow-y: scroll;
+    height: 70vh;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.divCheck{
+    padding: 4%;
+}
+
+.divSamples button{
+    display: block;
+    border: solid 1px rgba(255, 0, 0, 0.4);
+    margin: 0 auto;
+    padding: 1% 4%;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0px 0px 10px 5px rgba(255, 69, 0, .5);
+    background-color: rgba(255, 255, 255, 0.8);
+    font-size: 1rem;
+    font-weight: bold;
+    color: rgba(0, 0, 0, .7);
+}
+
+@media (max-width: 440px){
+    h1{
+        font-size: 1.5rem;
+    }
+
+    .divContent{
+        margin: 1%;
+        padding: 2%;
+        background-color: rgb(210, 226, 226);
+        border-radius: 5px;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .sectionSamples{
+        display: flex;
+        flex-direction: column;
+        gap: 5%;
+        justify-content: space-evenly;
+        margin: 2% 0;
+    }
+    
+    .sectionSamples{
+        margin-top: 10%;
+    }
+
+    .sectionSamples > div{
+        width: 100%;
+    }
+    
+    .divCheck{
+        padding: 8% 5%;
+    }
+}
