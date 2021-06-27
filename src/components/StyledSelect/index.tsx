@@ -22,7 +22,7 @@ type ValidListArrayType = {
 type StyledSelectProps = {
     styledSelId: string;
     srcList: Array<Object>;
-    defaultValue?:string;
+    defaultLabel?:string;
     stylesAttributes?: StyledAttributesType;
 }
 
@@ -33,7 +33,7 @@ type StyledPickedOptionType = {
 
 export function StyledSelect({styledSelId,
                             srcList,
-                            defaultValue="",
+                            defaultLabel="",
                             stylesAttributes={
                                 width:"100%",
                                 height:"35px",
@@ -53,8 +53,8 @@ export function StyledSelect({styledSelId,
     const {storeStyledSelectOption} = useContext(StyledSelectContext);
 
     useEffect(()=>{
-        if (defaultValue!=="" || typeof defaultValue === undefined){
-            setCurrentOption(defaultValue);
+        if (defaultLabel!=="" || typeof defaultLabel === undefined){
+            setCurrentOption(defaultLabel);
         }else{
             setCurrentOption("Selecione");
         }

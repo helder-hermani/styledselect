@@ -35,7 +35,7 @@ const dbEspecialities = [
 
 export function Home(){
     const {getValue} = useStyledSelect();
-    const {StyledSelect} = useStyledSelect()
+    const {StyledSelect} = useStyledSelect();
     const [valorSel, setValorSel]=useState<string>("");
     const [valorSel2, setValorSel2]=useState<string>("");
 
@@ -63,7 +63,7 @@ export function Home(){
                         <StyledSelect
                             styledSelId='mySelect2'
                             srcList={dbEspecialities}
-                            defaultValue="Categorias"
+                            defaultLabel="Categorias"
                             stylesAttributes={{
                                 backgroundColor: "#f2fd91",
                                 fontFamily:"sans-serif",

@@ -20,6 +20,7 @@ type StyledSelectContextProps = {
     buildValidList: (arg0:Array<Object>)=>Array<ValidListArrayType>;
     storeStyledSelectOption: (arg0:StyledSelectValuesProps) => void;
     getValue: (arg0:string) => string;
+    styledSelectValues:Array<StyledSelectValuesProps>|undefined;
 }
 
 export const StyledSelectContext = createContext({} as StyledSelectContextProps);
@@ -125,7 +126,7 @@ export function StyledSelectContextProvider({children}:StyledSelectContextProvid
     }
 
     return (
-        <StyledSelectContext.Provider value={{buildValidList, storeStyledSelectOption, getValue}}>
+        <StyledSelectContext.Provider value={{buildValidList, storeStyledSelectOption, getValue, styledSelectValues}}>
             {children}
         </StyledSelectContext.Provider>
     )
