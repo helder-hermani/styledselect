@@ -24,6 +24,10 @@ type StyledSelectProps = {
     srcList: Array<Object>;
     defaultLabel?:string;
     stylesAttributes?: StyledAttributesType;
+    defaultData ?: {
+        value: string;
+        iconUrl ?: string;
+    }|undefined;
 }
 
 type StyledPickedOptionType = {
@@ -40,12 +44,13 @@ export function StyledSelect({styledSelId,
                                 maxWidth:"300px",
                                 backgroundColor: "#FFFFFF",
                                 fontFamily:"sans-serif"
-                                }
+                                },
+                            defaultData
                             }:StyledSelectProps){
 
     const [visibleOptions, setVisibleOptions] = useState<boolean>(false);
     const [currentOption, setCurrentOption] = useState<string>("");
-    const [selectIconDefaultUrl, setSelectIconDefaultUrl] = useState<string>('/assets/styledSelect/arrowdown.gif');
+    const [selectIconDefaultUrl, setSelectIconDefaultUrl] = useState<string|undefined>('/assets/styledSelect/arrowdown.gif');
 
     const {buildValidList} = useContext(StyledSelectContext);
     const validListArray:Array<ValidListArrayType> = buildValidList(srcList)
@@ -53,14 +58,26 @@ export function StyledSelect({styledSelId,
     const {storeStyledSelectOption} = useContext(StyledSelectContext);
 
     useEffect(()=>{
+        let paramDefaultIconUrl:string|undefined="";
+
         if (defaultLabel!=="" || typeof defaultLabel === undefined){
             setCurrentOption(defaultLabel);
         }else{
             setCurrentOption("Selecione");
         }
+
+        // debugger;
+
+        if (defaultData !== undefined){
+            if (defaultData.iconUrl !== ""){
+                paramDefaultIconUrl=defaultData.iconUrl;
+            }
+
+            pickOption(styledSelId,defaultData.value,paramDefaultIconUrl);
+        }
     },[])
 
-    function pickOption(id:string, value:string, iconUrl:string){
+    function pickOption(id:string, value:string, iconUrl:string|undefined){
         const pickedOption:StyledPickedOptionType={
             id:id,
             value:value

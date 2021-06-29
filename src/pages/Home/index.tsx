@@ -64,6 +64,10 @@ export function Home(){
                             styledSelId='mySelect2'
                             srcList={dbEspecialities}
                             defaultLabel="Categorias"
+                            defaultData={{
+                                value: "Política",
+                                iconUrl: "/assets/styledselect/politics.gif"
+                            }}
                             stylesAttributes={{
                                 backgroundColor: "#f2fd91",
                                 fontFamily:"sans-serif",
