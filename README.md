@@ -69,7 +69,11 @@
 
  - **defaultLabel**: Opcional, do tipo *string*. Descrição padrão que aparecerá no select. No entanto, não representa/armazena valor. Caso o usuário não escolha nenhuma opção no componente, a exibição em tela será a *string* passada nesse parâmetro, mas o valor do StyledSelect será *string* vazia. Se não for passado nenhum valor, visto que é propriedade opcional, a legenda padrão é a *string* "Selecione".
  
- - **stylesAttributes**:  Opcional. Recebe um objeto contendo as seguintes propriedades, todas opcionais e do tipo *string*.
+ - **defaultData**:  Opcional. Pode receber um objeto contendo as seguintes propriedades:
+	 - *value*: Obrigatório. Valor padrão que será exibido em tela por padrão, e que também será armazenado como valor vinculado ao ID do StyledSelect.
+	 - *iconUrl*: Opcional. Ícone que será exibido como default.
+	 
+ - **stylesAttributes**:  Opcional. Pode receber um objeto contendo as seguintes propriedades, todas opcionais e do tipo *string*.
 	 - *height*: altura do StyledSelect. Default: 35px.
 	 - *maxHeight*: altura máxima do StyledSelect.
 	 - *width*: largura do StyledSelect. Default: 100%.
@@ -193,7 +197,9 @@ Exemplo:
 ### Atenção: 
 #### Recuperando o valor de um select, sem necessidade de interação do usuário.
 
-Quando um usuário clica na opção desejada, o Contexto do StyledSelect armazenará como objeto o ID e seu respectivo valor na variável **styledSelectValues** , formando assim uma coleção (array) de objetos com id/valor, representando cada StyledSelect da aplicação.. Estes valores poderão ser acessados através da função **getValue** (tudo visíveis à toda aplicação, via Contexto).
+Quando um usuário clica na opção desejada, o Contexto do StyledSelect armazenará como objeto o ID e seu respectivo valor na variável **styledSelectValues** , formando assim uma coleção (array) de objetos com id/valor, representando cada StyledSelect da aplicação. Estes valores poderão ser acessados através da função **getValue** (tudo visíveis à toda aplicação, via Contexto).
 
-Caso possua alguma informação (como um Estado) que precise ser exibida automaticamente assim que o usuário selecionar uma opção, utilize o hook do React `{ useEffect }` , sendo executado toda vez que a variável **styledSelectValues** tiver seu valor atualizado.
+No entanto, embora o valor seja armazenado, ele não é renderizado em tela.
+
+Assim, caso possua alguma informação (como um Estado) que precise ser atualizado em tela automaticamente assim que o usuário selecionar uma opção, utilize o hook do React `{ useEffect }` , sendo executado toda vez que a variável **styledSelectValues** tiver seu valor atualizado.
 # styledselect

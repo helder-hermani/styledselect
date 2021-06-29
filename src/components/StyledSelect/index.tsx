@@ -58,7 +58,7 @@ export function StyledSelect({styledSelId,
     const {storeStyledSelectOption} = useContext(StyledSelectContext);
 
     useEffect(()=>{
-        let paramDefaultIconUrl:string|undefined="";
+        let paramDefaultIconUrl:string|undefined="/assets/styledSelect/arrowdown.gif";
 
         if (defaultLabel!=="" || typeof defaultLabel === undefined){
             setCurrentOption(defaultLabel);
